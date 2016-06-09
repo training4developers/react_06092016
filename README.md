@@ -34,7 +34,6 @@ Breaks:
 - [React Blog Posts](https://github.com/training4developers/react-flux-blog)
 - [TopTal Angular Directive](https://www.toptal.com/angular-js/angular-js-demystifying-directives)
 - [React SitePoint](http://www.sitepoint.com/author/ericgreene/)
-- [JavaScript Blog Posts](https://www.accelebrate.com/blog/?s=Greene)
 
 ### Other Resources
 

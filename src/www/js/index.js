@@ -11,23 +11,36 @@ class ItemTool extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			currentView: 'list',
 			items: props.items.concat()
 		};
 		this.addItem = this.addItem.bind(this);
+		this.showAddItem = this.showAddItem.bind(this);
 	}
 
 	addItem(newColor) {
 		this.setState({
-			items: this.state.items.concat(newColor)
+			items: this.state.items.concat(newColor),
+			currentView: 'list'
+		});
+	}
+
+	showAddItem() {
+		this.setState({
+			currentView: 'form'
 		});
 	}
 
 	render() {
 
-		return <div>
-			<ItemList items={this.state.items} />
-			<ItemForm onAddItem={this.addItem} />
-		</div>;
+		if (this.state.currentView === 'list') {
+			return <div>
+				<ItemList items={this.state.items} />
+				<button onClick={this.showAddItem}>Add Item</button>
+			</div>;
+		} else {
+			return <ItemForm onAddItem={this.addItem} />;
+		}
 
 	}
 }

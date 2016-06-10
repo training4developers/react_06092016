@@ -1,14 +1,10 @@
 import React from 'react';
 
-export class ItemForm extends React.Component {
+export class BaseComponent extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			newColor: ''
-		};
 		this.onChange = this.onChange.bind(this);
-		this.addItem = this.addItem.bind(this);
 	}
 
 	onChange(e) {
@@ -16,6 +12,19 @@ export class ItemForm extends React.Component {
 			[e.target.name]: e.target.value
 		});
 	}
+
+}
+
+export class ItemForm extends BaseComponent {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			newColor: ''
+		};
+		this.addItem = this.addItem.bind(this);
+	}
+
 
 	addItem() {
 		this.props.onAddItem(this.state.newColor);
